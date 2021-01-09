@@ -52,6 +52,16 @@ function validateCred(arr) {
     }
 }
 
+function findInvalidCards (arr) {
+    let newArray = arr.filter((element) => { 
+        return validateCred(element) 
+    });
+    return newArray;
+}
+
+
+// This module exports data to test file
+
 let TestModule = {
     valid1: valid1,
     valid2: valid2,
@@ -68,7 +78,9 @@ let TestModule = {
     mystery3: mystery3,
     mystery4: mystery4,
     mystery5: mystery5,
+    batch: batch,
     validateCred: validateCred,
+    findInvalidCards: findInvalidCards,
 };
 
 module.exports = TestModule;
