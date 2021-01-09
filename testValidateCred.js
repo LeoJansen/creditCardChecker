@@ -37,13 +37,13 @@ console.log(' ')
 console.log(' ')
 let test11 = TestModule.validateCred(TestModule.mystery1)
 console.log(test11);
-let test12 = TestModule.validateCred(TestModule.mystery1)
+let test12 = TestModule.validateCred(TestModule.mystery2)
 console.log(test12);
-let test13 = TestModule.validateCred(TestModule.mystery1)
+let test13 = TestModule.validateCred(TestModule.mystery3)
 console.log(test13);
-let test14 = TestModule.validateCred(TestModule.mystery1)
+let test14 = TestModule.validateCred(TestModule.mystery4)
 console.log(test14);
-let test15 = TestModule.validateCred(TestModule.mystery1)
+let test15 = TestModule.validateCred(TestModule.mystery5)
 console.log(test15);
 
 console.log(' ')
