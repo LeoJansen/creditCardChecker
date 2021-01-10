@@ -25,6 +25,10 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 
+/* Project Step 3
+The purpose of validateCred() is to return true when an array contains digits of a valid credit card number and false when it is invalid.
+*/
+
 function validateCred(arr) {
     let sum = arr[arr.length - 1];
     //console.log('sum init = ' + sum);
@@ -52,12 +56,63 @@ function validateCred(arr) {
     }
 }
 
+
+
+/* Project Step 4 
+The role of findInvalidCards() is to check through the nested array for which numbers are invalid, and return another nested array of invalid cards.
+*/
+
 function findInvalidCards (arr) {
     let newArray = arr.filter((element) => { 
         return validateCred(element) 
     });
     return newArray;
 }
+
+
+
+
+/* Project Step 5
+idInvalidCardCompanies() helps to identify the credit card companies that have possibly issued these faulty numbers.
+*/
+
+
+function idInvalidCardCompanies(arr) {
+    let invalidArray = findInvalidCards(arr);
+    let amex = invalidArray.some( element => element[0] == 3);
+    let visa = invalidArray.some( element => element[0] == 4);
+    let mastercard = invalidArray.some( element => element[0] == 5);
+    let discover = invalidArray.some( element => element[0] == 6);
+    let resultArray = [];
+    if (amex == true) {
+        resultArray.push('Amex')
+    };
+    if (visa == true) {
+        resultArray.push('Visa')
+    };
+    if (mastercard == true) {
+        resultArray.push('Mastercard')
+    };
+    if (discover == true) {
+        resultArray.push('Discover')
+    };
+    return resultArray;
+  
+};
+
+console.log(idInvalidCardCompanies(batch));
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // This module exports data to test file
